@@ -12,4 +12,4 @@ RUN cd / && \
     rm -r .git && \
     pip3 install -r requirements.txt
 WORKDIR /Cortana-ImageEditor
-CMD python3 main.py
+CMD python3 bot.py
