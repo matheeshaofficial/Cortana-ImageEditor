@@ -7,7 +7,7 @@ RUN pip3 install -U pip
 RUN curl -sL https://deb.nodesource.com/setup_15.x | bash -
 RUN apt-get install -y nodejs
 RUN cd / && \
-    git clone https://github.com/matheeshaofficial/Cortana-ImageEditor && \
+    git clone https://github.com/matheeshaofficial/Cortana-ImageEditor.git && \
     cd / && \
     rm -r .git && \
     pip3 install -r requirements.txt
