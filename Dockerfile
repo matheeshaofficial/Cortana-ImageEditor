@@ -1,8 +1,6 @@
-FROM python:3.9
-WORKDIR .
-ENV PYTHONUNBUFFERED=1
-COPY requirements.txt .
-COPY deploy.sh .
-RUN bash deploy.sh
+FROM ubuntu:latest
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install python3 -y && apt-get install python3-pip -y
 COPY . .
-CMD ["python3", "-m", "bot.py"]
+RUN pip3 install requirements.txt
+CMD python3 bot.py
