@@ -1,5 +1,8 @@
 FROM python:3.9
-RUN apt-get update && apt-get upgrade -y
+WORKDIR .
+ENV PYTHONUNBUFFERED=1
+COPY requirements.txt .
+COPY deploy.sh .
+RUN bash deploy.sh
 COPY . .
-RUN pip3 install requirements.txt
-CMD python3 bot.py
+CMD ["python3", "-m", "bot.py"]
